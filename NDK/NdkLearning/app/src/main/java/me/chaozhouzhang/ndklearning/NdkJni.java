@@ -1,14 +1,24 @@
 package me.chaozhouzhang.ndklearning;
 
+import android.util.Log;
+
 /**
  * Created on 2019/3/7 15:47
  *
  * @author zhangchaozhou
  */
-public class NdkJni {
+public abstract class NdkJni {
+    private int number;
+    private Person person;
+
 
     static {
-        System.loadLibrary("NdkJni");
+        try{
+            System.loadLibrary("NdkJni");
+        }catch(Exception e){
+            //TODO :handle exception
+
+        }
     }
 
 
@@ -27,5 +37,17 @@ public class NdkJni {
      */
     public void callJava(int nativeValue) {
 
+        Log.e("callJava","nativeValue"+nativeValue);
     }
+
+
+    public NdkJni() {
+        person = new Person();
+        number = getNumber();
+        callNativeInitialPerson(person);
+    }
+
+    abstract protected int getNumber();
+
+    private native void callNativeInitialPerson(Object person);
 }
