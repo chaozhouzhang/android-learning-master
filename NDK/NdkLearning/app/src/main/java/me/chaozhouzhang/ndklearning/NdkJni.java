@@ -13,9 +13,9 @@ public abstract class NdkJni {
 
 
     static {
-        try{
+        try {
             System.loadLibrary("NdkJni");
-        }catch(Exception e){
+        } catch (Exception e) {
             //TODO :handle exception
 
         }
@@ -37,7 +37,7 @@ public abstract class NdkJni {
      */
     public void callJava(int nativeValue) {
 
-        Log.e("callJava","nativeValue"+nativeValue);
+        Log.e("callJava", "nativeValue" + nativeValue);
     }
 
 
@@ -47,6 +47,11 @@ public abstract class NdkJni {
         callNativeInitialPerson(person);
     }
 
+    /**
+     * 获取数字
+     *
+     * @return
+     */
     abstract protected int getNumber();
 
     private native void callNativeInitialPerson(Object person);

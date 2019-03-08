@@ -13,18 +13,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         printStackTrace();
     }
 
 
-
+    /**
+     * 打印方法调用的堆栈信息
+     */
     private void printStackTrace() {
-
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         for (StackTraceElement stackTraceElement : stackTraceElements) {
             System.out.println(stackTraceElement);
         }
     }
 }
+
