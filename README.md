@@ -73,3 +73,16 @@ Application Binary Interface
 
 # 
 
+
+
+# 错误
+
+```
+ERROR: ABIs [armeabi, mips, mips64] are not supported for platform. Supported ABIs are [arm64-v8a, armeabi-v7a, x86, x86_64].
+```
+解决
+把NDK改为：android-ndk-r16b
+
+
+
+
